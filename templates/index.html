@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-weight=hold">Dr.HeArt</title>
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+    <header class="navi" style="border:2px solid #3d90f5">
+        <div class="navi__title">
+            <img class = "navi__logo" src="/static/images/image.png">
+            <p class="navi__title">Dr.HeArt</p>
+        </div>
+        <div class="navi__menu">
+            <li class="navi__menu__item"><a href="/" class="navi__link">首页</a></li>
+            <li class="navi__menu__item"><a href="     " class="navi__link">帖子广场</a></li>
+            <li class="navi__menu__item"><a href="      " class="navi__link">评分系统</a></li>
+            <li class="navi__menu__item"><a href="person_profile" class="navi__link">个人中心</a></li>
+
+        </div>
+    </header>
+    <main class="con">
+        <div class="con__picwall">
+        </div>
+        <img class="con__intro__logo1" src="/static/images/WX2.png" width="33" height="32"/>
+        <div class="con__intro">
+            <h class="con__intro__title1">社会动态板块</h>
+            <p class="con__intro__passage1">根据社会动态更新讨论区</p>
+            <p class="con__intro__passage1">探讨社会事件下个人情绪</p>
+
+            <img class="con__intro__logo2" src="/static/images/wx20.png"/>
+            <h class="con__intro__title2">正向评论及反馈</h>
+            <p class="con__intro__passage2">鼓励给予用户积极回应</p>
+            <p class="con__intro__passage3">创造情感抒发氛围</p>
+
+        </div>
+
+         <center>
+         <section>  <div style="border:10px solid #3d90f5 width=225px height=400px" >
+                    <h1>由此输入</h1>
+                    </div>
+                    <form class="form" action="/" method="POST">
+                        <p class="form__input">
+                            <label class="form__label" for="entry">分享你的心事</label>
+                            <center>
+                            <textarea class="form__textarea" name="content" id="entry" ></textarea>
+                            <button class="form__submit" type="submit">提交</button>
+                            </center>
+                        </p>
+                    </form>
+         </section>
+         </center>
+                <section class="unique">
+                    <h1>最新帖子</h1>
+                    {% for entry in entries %}
+                    <article class="entry">
+                        <div>
+                            <h2 class="entry__title">{{ entry[0] }}</h2>
+                            <time class="entry__date" datetime={{ entry[2] }}> {{ entry[2] }}</time>
+                        </div>
+                        <p class="entry__content">
+                            {{ entry[1] }}
+                        </p>
+                        <a href="posts/">了解更多</a>
+                    </article>
+                    {% endfor %}
+                </section>
+    </main>
+</body>
+</html>
