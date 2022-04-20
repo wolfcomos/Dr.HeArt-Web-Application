@@ -5,7 +5,7 @@ import random
 
 
 app = Flask(__name__)
-client = MongoClient("mongodb+srv://wolf_comos:021115@cluster0.9km7y.mongodb.net/test")
+client = MongoClient("mongodb+srv:/")
 app.db = client.TheHelp
 # 链接Mongodb数据库
 
